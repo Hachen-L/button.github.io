@@ -2,22 +2,15 @@
 
 function magic() {
 	// до вызова функции
-	let menu = {
-		width: 200,
-		height: 300,
-		title: "My menu"
-	};
-
-	multiplyNumeric(menu);
-
-	function multiplyNumeric(obj) {
-		for (let key in obj) {
-			if (typeof obj[key] == 'number') {
-				obj[key] *= 2;
+	let key = confirm('Вы Илья?');
+	if (!key) {
+		do {
+			let user = {
+				name: prompt('Введите имя пользователя:', ''),
+				age: prompt('Сколько вам лет?', ''),
 			}
-		}
-		for (let key in menu) {
-			console.log(menu[key]);
-		}
-	}
+			alert(`Вас зовут ${user.name} и вам ${user.age} лет`);
+			value = confirm('Всё верно?')
+		} while (!value)
+	} else alert('Вход закрыт');
 }
